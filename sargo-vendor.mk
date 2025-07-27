@@ -621,6 +621,7 @@ PRODUCT_COPY_FILES += \
     vendor/google/sargo/proprietary/vendor/etc/init/android.hardware.sensors@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.sensors@2.0-service.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/android.hardware.weaver@1.0-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.weaver@1.0-service.citadel.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/citadeld.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/citadeld.rc \
+    vendor/google/sargo/proprietary/vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/easelmanagerd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/easelmanagerd.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/init.time_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.time_daemon.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/init_citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init_citadel.rc \
@@ -646,6 +647,7 @@ PRODUCT_COPY_FILES += \
     vendor/google/sargo/proprietary/vendor/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     vendor/google/sargo/proprietary/vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.base-arm.policy \
     vendor/google/sargo/proprietary/vendor/etc/seccomp_policy/codec2.vendor.ext-arm.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext-arm.policy \
+    vendor/google/sargo/proprietary/vendor/etc/seccomp_policy/wifidisplayhalservice.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/wifidisplayhalservice.policy \
     vendor/google/sargo/proprietary/vendor/etc/sensors/config/ak991x_dri_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/ak991x_dri_0.json \
     vendor/google/sargo/proprietary/vendor/etc/sensors/config/b4s4_bmi160.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/b4s4_bmi160.json \
     vendor/google/sargo/proprietary/vendor/etc/sensors/config/b4s4_bmp380_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/b4s4_bmp380_0.json \
@@ -675,6 +677,7 @@ PRODUCT_COPY_FILES += \
     vendor/google/sargo/proprietary/vendor/etc/sensors/config/sns_tilt.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/sns_tilt.json \
     vendor/google/sargo/proprietary/vendor/etc/sensors/config/tmd2725_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/tmd2725_0.json \
     vendor/google/sargo/proprietary/vendor/etc/sensors/sns_reg_config:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sns_reg_config \
+    vendor/google/sargo/proprietary/vendor/etc/wfdconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/wfdconfig.xml \
     vendor/google/sargo/proprietary/vendor/firmware/CAMERA_ICP.elf:$(TARGET_COPY_OUT_VENDOR)/firmware/CAMERA_ICP.elf \
     vendor/google/sargo/proprietary/vendor/firmware/Data.msc:$(TARGET_COPY_OUT_VENDOR)/firmware/Data.msc \
     vendor/google/sargo/proprietary/vendor/firmware/a615_zap.b00:$(TARGET_COPY_OUT_VENDOR)/firmware/a615_zap.b00 \
@@ -1157,6 +1160,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.wigig.netperftuner@1.0 \
     vendor.qti.power.pasrmanager@1.0 \
     vendor.qti.voiceprint@1.0 \
+    libFileMux_proprietary \
     libadm \
     libadpcmdec \
     libcppf \
@@ -1164,6 +1168,9 @@ PRODUCT_PACKAGES += \
     libfastcvdsp_stub \
     libfastcvopt \
     libmaxxaudioqdsp \
+    libmmosal_vendor \
+    libmmrtpdecoder_proprietary \
+    libmmrtpencoder_proprietary \
     libqcodec2_base \
     libqcodec2_basecodec \
     libqcodec2_core \
@@ -1174,6 +1181,27 @@ PRODUCT_PACKAGES += \
     libswregistrationalgo \
     libvideoutils \
     libvqzip \
+    libwfdcodecv4l2_proprietary \
+    libwfdcommonutils_proprietary \
+    libwfdconfigutils_proprietary \
+    libwfddisplayconfig_proprietary \
+    libwfdhdcpcp \
+    libwfdmminterface_proprietary \
+    libwfdmmservice_proprietary \
+    libwfdmmsrc_proprietary \
+    libwfdmodulehdcpsession \
+    libwfdrtsp_proprietary \
+    libwfdsessionmodule \
+    libwfdsourcesession_proprietary \
+    libwfdsourcesm_proprietary \
+    libwfduibcinterface_proprietary \
+    libwfduibcsink_proprietary \
+    libwfduibcsinkinterface_proprietary \
+    libwfduibcsrc_proprietary \
+    libwfduibcsrcinterface_proprietary \
+    libwfdutils_proprietary \
+    vendor.qti.hardware.wifidisplaysession@1.0_vendor \
+    vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl \
     android.hardware.authsecret@1.0-impl.nos \
     android.hardware.confirmationui.secure_input_citadel \
     android.hardware.identity@1.0-impl.nos \
@@ -1320,6 +1348,7 @@ PRODUCT_PACKAGES += \
     subsystem_ramdump \
     thermal-engine \
     time_daemon \
+    wifidisplayhalservice \
     xtra-daemon
 
 PRODUCT_PACKAGES += \
