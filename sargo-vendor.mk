@@ -38,15 +38,41 @@ PRODUCT_COPY_FILES += \
     vendor/google/sargo/proprietary/system_ext/etc/permissions/obdm_permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/obdm_permissions.xml \
     vendor/google/sargo/proprietary/system_ext/etc/permissions/privapp-permissions-google-se-lineage.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-google-se-lineage.xml \
     vendor/google/sargo/proprietary/system_ext/etc/permissions/vzw_mvs_permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vzw_mvs_permissions.xml \
+    vendor/google/sargo/proprietary/system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml \
+    vendor/google/sargo/proprietary/system_ext/etc/seccomp_policy/wfdservice64.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/wfdservice64.policy \
+    vendor/google/sargo/proprietary/system_ext/etc/wfdconfigsink.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/wfdconfigsink.xml \
     vendor/google/sargo/proprietary/system_ext/priv-app/EuiccSupportPixel/esim-full-v0.img:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/EuiccSupportPixel/esim-full-v0.img \
     vendor/google/sargo/proprietary/system_ext/priv-app/EuiccSupportPixel/esim-v1.img:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/EuiccSupportPixel/esim-v1.img
 
 PRODUCT_PACKAGES += \
     libdmengine \
     libdmjavaplugin \
+    libmmosal \
+    libmmparser_lite \
+    libmmrtpdecoder \
+    libmmrtpencoder \
     libsecureui_svcsock_system \
     libsecureuisvc_jni \
+    libwfdavenhancements \
+    libwfdclient \
+    libwfdcommonutils \
+    libwfdconfigutils \
+    libwfddisplayconfig \
+    libwfdmminterface \
+    libwfdmmsink \
+    libwfdmmsrc_system \
+    libwfdnative \
+    libwfdrtsp \
+    libwfdservice \
+    libwfdsinksm \
+    libwfduibcinterface \
+    libwfduibcsink \
+    libwfduibcsinkinterface \
+    libwfduibcsrc \
+    libwfduibcsrcinterface \
     vendor.qti.hardware.tui_comm@1.0 \
+    vendor.qti.hardware.wifidisplaysession@1.0 \
+    vendor.qti.hardware.wifidisplaysession_aidl-V2-ndk \
     MobileFeliCaClient \
     MobileFeliCaMenuMainApp \
     MobileFeliCaSettingApp \
@@ -81,14 +107,21 @@ PRODUCT_PACKAGES += \
     EuiccSupportPixelPermissions \
     MyVerizonServices \
     OBDM_Permissions \
+    WfdService \
     obdm_stub \
+    WfdCommon \
     libhwinfo \
     com.android.hotwordenrollment.common.util \
-    com.google.android.camera.extensions
+    com.google.android.camera.extensions \
+    wfdservice
 
 PRODUCT_PACKAGES += \
     product_priv-app_DMService_lib_arm_libdmengine_so \
-    product_priv-app_DMService_lib_arm_libdmjavaplugin_so
+    product_priv-app_DMService_lib_arm_libdmjavaplugin_so \
+    system_ext_priv-app_WfdService_lib_arm64_libwfdnative_so
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 PRODUCT_COPY_FILES += \
     vendor/google/sargo/proprietary/product/etc/CarrierSettings/a1_at.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/a1_at.pb \

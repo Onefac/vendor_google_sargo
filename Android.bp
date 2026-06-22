@@ -10,6 +10,8 @@ soong_namespace {
         "hardware/qcom/sdm845/gps",
         "hardware/qcom-caf/sm8250",
         "hardware/qcom-caf/wlan",
+        "vendor/qcom/opensource/commonsys/display",
+        "vendor/qcom/opensource/commonsys-intf/display",
         "vendor/qcom/opensource/display",
     ],
 }
@@ -63,6 +65,117 @@ cc_prebuilt_library_shared {
     compile_multilib: "32",
     prefer: true,
     product_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmosal",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libmmosal.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmparser_lite",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libmmparser_lite.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libmmosal",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmrtpdecoder",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libmmrtpdecoder.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "liblog",
+                "libcutils",
+                "libmmosal",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmmrtpencoder",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libmmrtpencoder.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -131,6 +244,607 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libwfdavenhancements",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdavenhancements.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libbinder",
+                "libutils",
+                "libgui",
+                "libui",
+                "libstagefright_foundation",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdclient",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdclient.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbinder",
+                "libgui",
+                "libmmosal",
+                "libinput",
+                "libwfdsinksm",
+                "libwfdcommonutils",
+                "libwfdconfigutils",
+                "libwfdmminterface",
+                "libnativewindow",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdcommonutils",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdcommonutils.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbinder",
+                "libnl",
+                "libwfdmminterface",
+                "libwfdconfigutils",
+                "libui",
+                "libgui",
+                "libwfddisplayconfig",
+                "libion",
+                "libprocessgroup",
+                "libdng_sdk",
+                "libjpeg",
+                "libpiex",
+                "libpng",
+                "libnativewindow",
+                "libEGL",
+                "libGLESv2",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdconfigutils",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdconfigutils.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbinder",
+                "libnl",
+                "libwfdmminterface",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfddisplayconfig",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfddisplayconfig.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "libutils",
+                "libcutils",
+                "liblog",
+                "vendor.display.config@2.0",
+                "libdisplayconfig.system.qti",
+                "libbinder_ndk",
+                "vendor.qti.hardware.display.config-V16-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdmminterface",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdmminterface.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "liblog",
+                "libutils",
+                "libwfddisplayconfig",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdmmsink",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdmmsink.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "liblog",
+                "libutils",
+                "libmedia",
+                "libaudioclient",
+                "libgui",
+                "libbinder",
+                "libwfdcommonutils",
+                "libwfdconfigutils",
+                "libui",
+                "libmmparser_lite",
+                "libmmrtpdecoder",
+                "libcutils",
+                "libwfddisplayconfig",
+                "libhwui",
+                "libwfdmminterface",
+                "libhidlbase",
+                "libhidlmemory",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libandroid",
+                "libmediandk",
+                "libaaudio",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdmmsrc_system",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdmmsrc_system.so",
+            ],
+            shared_libs: [
+                "libbinder",
+                "libmmosal",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libgui",
+                "libui",
+                "libwfdcommonutils",
+                "libwfdconfigutils",
+                "libinput",
+                "libwfdmminterface",
+                "libwfddisplayconfig",
+                "libmedia_helper",
+                "libaudioclient",
+                "libwfdavenhancements",
+                "libhidlbase",
+                "libgralloctypes",
+                "android.hardware.graphics.mapper@4.0",
+                "libvndksupport",
+                "android.hardware.graphics.allocator@4.0",
+                "android.hardware.graphics.allocator-V2-ndk",
+                "libbinder_ndk",
+                "libaudiobase",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdnative",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdnative.so",
+            ],
+            shared_libs: [
+                "libandroid_runtime",
+                "libgui",
+                "libui",
+                "libbinder",
+                "libinput",
+                "libnativehelper",
+                "libutils",
+                "liblog",
+                "libwfdclient",
+                "android.hardware.graphics.common@1.0",
+                "android.hardware.graphics.bufferqueue@1.0",
+                "android.hardware.graphics.bufferqueue@2.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdrtsp",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdrtsp.so",
+            ],
+            shared_libs: [
+                "libc++",
+                "libcutils",
+                "libutils",
+                "libmmosal",
+                "libwfdcommonutils",
+                "libwfdconfigutils",
+                "libwfdmminterface",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdservice",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdservice.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbinder",
+                "libgui",
+                "libwfdsinksm",
+                "libmmosal",
+                "libwfdcommonutils",
+                "libwfdconfigutils",
+                "libinput",
+                "libwfdmminterface",
+                "libmedia_helper",
+                "libaudioclient",
+                "libaudiobase",
+                "libaudiofoundation",
+                "audioclient-types-aidl-cpp",
+                "android.media.audio.common.types-V5-cpp",
+                "libwfdmmsrc_system",
+                "libwfdavenhancements",
+                "libhidlbase",
+                "vendor.qti.hardware.wifidisplaysession@1.0",
+                "vendor.qti.hardware.wifidisplaysession_aidl-V2-ndk",
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfdsinksm",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfdsinksm.so",
+            ],
+            shared_libs: [
+                "libc++",
+                "libcutils",
+                "libutils",
+                "libwfdrtsp",
+                "libwfduibcinterface",
+                "libwfdmmsink",
+                "libmmosal",
+                "libmedia",
+                "libwfdcommonutils",
+                "libwfdconfigutils",
+                "libwfdmminterface",
+                "libmmrtpencoder",
+                "libmmrtpdecoder",
+                "libhidlbase",
+                "libnativewindow",
+                "libmediandk",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfduibcinterface",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfduibcinterface.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libwfduibcsrcinterface",
+                "libwfduibcsinkinterface",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfduibcsink",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfduibcsink.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "libutils",
+                "liblog",
+                "libcutils",
+                "libwfdconfigutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfduibcsinkinterface",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfduibcsinkinterface.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libwfduibcsink",
+                "libwfdcommonutils",
+                "libwfdconfigutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfduibcsrc",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfduibcsrc.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "libwfdcommonutils",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libwfdconfigutils",
+                "libwfddisplayconfig",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwfduibcsrcinterface",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libwfduibcsrcinterface.so",
+            ],
+            shared_libs: [
+                "libmmosal",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libwfduibcsrc",
+                "libwfdcommonutils",
+                "libwfdconfigutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.tui_comm@1.0",
     owner: "google",
     strip: {
@@ -146,6 +860,60 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.wifidisplaysession@1.0",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.wifidisplaysession_aidl-V2-ndk",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V2-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "android.hardware.common-V2-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -583,6 +1351,18 @@ android_app_import {
 }
 
 android_app_import {
+    name: "WfdService",
+    owner: "google",
+    apk: "proprietary/system_ext/priv-app/WfdService/WfdService.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    system_ext_specific: true,
+}
+
+android_app_import {
     name: "obdm_stub",
     owner: "google",
     apk: "proprietary/system_ext/priv-app/obdm_stub/obdm_stub.apk",
@@ -593,6 +1373,14 @@ android_app_import {
     },
     privileged: true,
     system_ext_specific: true,
+}
+
+dex_import {
+    name: "WfdCommon",
+    owner: "google",
+    jars: [
+        "proprietary/system/framework/WfdCommon.jar",
+    ],
 }
 
 dex_import {
@@ -622,6 +1410,40 @@ dex_import {
     system_ext_specific: true,
 }
 
+cc_prebuilt_binary {
+    name: "wfdservice",
+    owner: "google",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/bin/wfdservice",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbinder",
+                "libwfdservice",
+                "libmmosal",
+                "libwfdcommonutils",
+                "libwfdconfigutils",
+                "libhidlbase",
+                "libavservices_minijail",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    system_ext_specific: true,
+}
+
 install_symlink {
     name: "product_priv-app_DMService_lib_arm_libdmengine_so",
     product_specific: true,
@@ -634,6 +1456,13 @@ install_symlink {
     product_specific: true,
     installed_location: "priv-app/DMService/lib/arm/libdmjavaplugin.so",
     symlink_target: "/product/lib/libdmjavaplugin.so",
+}
+
+install_symlink {
+    name: "system_ext_priv-app_WfdService_lib_arm64_libwfdnative_so",
+    system_ext_specific: true,
+    installed_location: "priv-app/WfdService/lib/arm64/libwfdnative.so",
+    symlink_target: "/system_ext/lib64/libwfdnative.so",
 }
 
 cc_prebuilt_library_shared {
