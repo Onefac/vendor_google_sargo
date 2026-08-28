@@ -15717,7 +15717,7 @@ cc_prebuilt_binary {
                 "android.hardware.biometrics.fingerprint@2.1",
                 "android.hardware.biometrics.fingerprint@2.2",
                 "com.fingerprints.extension@1.0",
-                "android.frameworks.stats@1.0",
+                "lineage.frameworks.stats@1.0",
                 "libQSEEComAPI",
                 "libc++",
                 "libc",
