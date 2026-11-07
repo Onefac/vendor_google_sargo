@@ -1224,20 +1224,20 @@ PRODUCT_PACKAGES += \
     unnhal-acc-common \
     unnhal-acc-hvx \
     vendor.google.wifi_ext@1.0 \
-    capi_v2_aptX_Classic \
-    capi_v2_aptX_HD \
-    libVC1Dec \
-    libVC1DecDsp_skel \
-    libapps_mem_heap \
-    libdspCV_skel \
-    libdsp_streamer_add_constant \
-    libdsp_streamer_binning \
-    libdsp_streamer_skel \
-    libfastcvadsp \
-    libfastcvdsp_skel \
-    libhexagon_nn_skel \
-    libsns_device_mode_skel \
-    libsns_low_lat_stream_skel \
+    vendor_lib_rfsa_adsp_capi_v2_aptX_Classic_so \
+    vendor_lib_rfsa_adsp_capi_v2_aptX_HD_so \
+    vendor_lib_rfsa_adsp_libVC1Dec_so \
+    vendor_lib_rfsa_adsp_libVC1DecDsp_skel_so \
+    vendor_lib_rfsa_adsp_libapps_mem_heap_so \
+    vendor_lib_rfsa_adsp_libdspCV_skel_so \
+    vendor_lib_rfsa_adsp_libdsp_streamer_add_constant_so \
+    vendor_lib_rfsa_adsp_libdsp_streamer_binning_so \
+    vendor_lib_rfsa_adsp_libdsp_streamer_skel_so \
+    vendor_lib_rfsa_adsp_libfastcvadsp_so \
+    vendor_lib_rfsa_adsp_libfastcvdsp_skel_so \
+    vendor_lib_rfsa_adsp_libhexagon_nn_skel_so \
+    vendor_lib_rfsa_adsp_libsns_device_mode_skel_so \
+    vendor_lib_rfsa_adsp_libsns_low_lat_stream_skel_so \
     TimeService \
     com.google.android.camera.experimental2018 \
     android.hardware.confirmationui@1.0-service-google.xml \
