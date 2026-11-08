@@ -1064,7 +1064,6 @@ PRODUCT_PACKAGES += \
     libgoog_llv_gpu \
     libgsl \
     libhdcpsrm \
-    libhdr_tm \
     libizat_core \
     libkeymasterdeviceutils \
     libkeymasterprovision \
@@ -1088,11 +1087,6 @@ PRODUCT_PACKAGES += \
     libqti-utils \
     libqtikeymaster4 \
     librpmb \
-    libsdedrm \
-    libsdm-color \
-    libsdm-diag \
-    libsdm-disp-vndapis \
-    libsdmextension \
     libsdsprpc \
     libsecureui \
     libsecureui_svcsock \
