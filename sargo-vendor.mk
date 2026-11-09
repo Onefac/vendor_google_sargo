@@ -589,7 +589,6 @@ PRODUCT_COPY_FILES += \
     vendor/google/sargo/proprietary/vendor/etc/init/android.hardware.weaver@1.0-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.weaver@1.0-service.citadel.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/citadeld.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/citadeld.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/easelmanagerd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/easelmanagerd.rc \
-    vendor/google/sargo/proprietary/vendor/etc/init/init-ramoops.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init-ramoops.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/init.time_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.time_daemon.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/init_citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init_citadel.rc \
     vendor/google/sargo/proprietary/vendor/etc/init/rebootescrow-citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rebootescrow-citadel.rc \
@@ -1282,7 +1281,6 @@ PRODUCT_PACKAGES += \
     pm-proxy \
     pm-service \
     qseecomd \
-    ramoops \
     sensors.qti \
     ssr_diag \
     ssr_setup \
