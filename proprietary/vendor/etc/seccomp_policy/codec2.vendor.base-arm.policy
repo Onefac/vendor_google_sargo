@@ -1,4 +1,4 @@
-###################################################################################################
+################################################################################################### 
 # Copyright (c) 2020 Qualcomm Technologies, Inc.
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
@@ -34,7 +34,7 @@ memfd_create: 1
 ftruncate: 1
 ftruncate64: 1
 
-mremap: arg3 == (MREMAP_MAYMOVE|MREMAP_FIXED) || arg3 == MREMAP_MAYMOVE
+mremap: arg3 == 3
 munmap: 1
 prctl: 1
 getuid32: 1
@@ -87,3 +87,6 @@ geteuid32: 1
 getgid32: 1
 getegid32: 1
 getgroups32: 1
+
+#video process sys
+inotify_add_watch: 1
